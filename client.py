@@ -8,11 +8,18 @@ username = 'Andi'
 password = 'test'
 
 s = client.ServerProxy('http://localhost:1337')
+#Zieht sich das Salt für Chap
 challenge = s.getchallenge(username)
+token = ''
 
+#Noch kein Token vorhanden
+print(s.multiply(5,6,token))
 print(challenge)
-
 hashed_password = hashlib.sha512((password + str(challenge)).encode()).hexdigest()
 
-print(s.login(username, hashed_password))
+if(s.login(username, hashed_password)):
+    #erstellt erst bei erfolgreicher anmeldung ein UserToken 
+    token = s.getToken(username)
 print(s.add(5,5))
+print(token)
+print(s.multiply(5,6,token))
