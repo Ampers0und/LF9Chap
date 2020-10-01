@@ -3,6 +3,9 @@
 		- random
 		- hashlib
 		- string
+		- xmlrpc.server.SimpleXMLRPCServer 
+		- xmlrpc.server.SimpleXMLRPCRequestHandler
+		- xmlrpc.client
 
 
 2. 	Rufen sie die Programme mit dem Python-Befehl mittels eines eindeutigen Pfades auf.
